@@ -1,5 +1,4 @@
 FROM alpine
-MAINTAINER Anastas Dancha <anapsix@random.io>
 
 ENV WEBDIS_REPO https://github.com/nicolasff/webdis.git
 
