@@ -1,5 +1,4 @@
 FROM alpine
-MAINTAINER Anastas Dancha <anapsix@random.io>
 
 ENV WEBDIS_REPO https://github.com/nicolasff/webdis.git
 
@@ -10,8 +9,7 @@ RUN apk -U upgrade && \
     cp webdis /usr/local/bin/        && \
     cp webdis.json /etc/             && \
     mkdir -p /usr/share/doc/webdis   && \
-    ls -la && \
-    cp README.markdown /usr/share/doc/webdis/README && \
+    cp README.md /usr/share/doc/webdis/README && \
     cd /tmp && rm -rf /tmp/webdis    && \
     apk del --purge alpine-sdk libevent-dev bsd-compat-headers git && \
     rm -rf /var/cache/apk/*
