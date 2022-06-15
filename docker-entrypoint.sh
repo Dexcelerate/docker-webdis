@@ -46,7 +46,7 @@ cat - <<EOF
       "enabled": ["FCALL"]
     }
   ],
-  "verbosity": ${VERBOSITY:-99},
+  "verbosity": ${VERBOSITY:-8},
   "logfile": "${LOGFILE:-/dev/stdout}"
 }
 EOF
