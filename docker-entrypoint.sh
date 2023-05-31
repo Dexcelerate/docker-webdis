@@ -20,7 +20,7 @@ strart_local_redis() {
       echo >&2 "installing redis-server.."
       apk add --no-cache -q redis
       echo >&2 "starting local redis-server.."
-      redis-server --daemonize yes --save "" --appendonly no --protected-mode no
+      redis-server --daemonize yes --save "" --appendonly no --protected-mode no --requirepass "aslkdjkkjadwkljdaslkjdwqklqajd39821ikdjal" 
     fi
   fi
 }
