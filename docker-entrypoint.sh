@@ -20,7 +20,7 @@ strart_local_redis() {
       echo >&2 "installing redis-server.."
       apk add --no-cache -q redis
       echo >&2 "starting local redis-server.."
-      redis-server --daemonize yes --save "" --appendonly no --protected-mode no --requirepass "aslkdjkkjadwkljdaslkjdwqklqajd39821ikdjal" --tls-port 6379 --port 0 --tls-cert-file /mnt/storage-box/letsencrypt/archive/dexcelerate.com/cert1.pem  --tls-key-file /mnt/storage-box/letsencrypt/archive/dexcelerate.com/privkey1.pem  --tls-ca-cert-file /mnt/storage-box/letsencrypt/archive/dexcelerate.com/fullchain1.pem
+      redis-server --daemonize yes --save "" --appendonly no --bind 0.0.0.0 --protected-mode no --requirepass "aslkdjkkjadwkljdaslkjdwqklqajd39821ikdjal" --tls-port 6379 --port 0 --tls-cert-file /mnt/storage-box/letsencrypt/archive/dexcelerate.com/cert1.pem  --tls-key-file /mnt/storage-box/letsencrypt/archive/dexcelerate.com/privkey1.pem  --tls-ca-cert-file /mnt/storage-box/letsencrypt/archive/dexcelerate.com/fullchain1.pem
     fi
   fi
 }
