@@ -1,6 +1,6 @@
 FROM alpine
 
-ENV WEBDIS_REPO https://github.com/nicolasff/webdis.git
+ENV WEBDIS_REPO https://github.com/Dexcelerate/webdis.git
 
 RUN apk -U upgrade && \
     apk add alpine-sdk libevent libevent-dev bsd-compat-headers git    && \
