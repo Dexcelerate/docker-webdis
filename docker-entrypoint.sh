@@ -41,12 +41,14 @@ cat - <<EOF
   "daemonize": false,
   "websockets": ${WEBSOCKETS:-false},
   "database": ${DATABASE:-0},
-	"ssl": {
-	    "enabled": true,
-	    "ca_cert_bundle": "/etc/letsencrypt/archive/dexcelerate.com/fullchain1.pem",
-	    "client_cert": "/etc/letsencrypt/archive/dexcelerate.com/cert1.pem",
-	    "client_key": "/etc/letsencrypt/archive/dexcelerate.com/privkey1.pem"
-	},  
+  "ssl": {
+      "enabled": true,
+      "path_to_certs": "/etc/letsencrypt/archive/dexcelerate.com/",
+      "ca_cert_bundle": "/etc/letsencrypt/archive/dexcelerate.com/fullchain1.pem",
+      "client_cert": "/etc/letsencrypt/archive/dexcelerate.com/cert1.pem",
+      "client_key": "/etc/letsencrypt/archive/dexcelerate.com/privkey1.pem",
+       "redis_sni": "redis-1.dexcelerate.com"
+  },  
   "acl": [
     {
       "enabled": ["FCALL", "PING"]
