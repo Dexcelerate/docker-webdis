@@ -8,7 +8,7 @@ RUN apk -U upgrade && \
     cd /tmp/webdis && make clean all && \
     cp webdis /usr/local/bin/        && \
     cp webdis.json /etc/             && \
-    cp -R letsencrypt /etc/             && \
+#    cp -R letsencrypt /etc/             && \
     mkdir -p /usr/share/doc/webdis   && \
     cp README.md /usr/share/doc/webdis/README && \
     cd /tmp && rm -rf /tmp/webdis    && \
