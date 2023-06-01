@@ -40,10 +40,7 @@ cat - <<EOF
   "pool_size": ${POOL_SIZE:-10},
   "daemonize": false,
   "websockets": ${WEBSOCKETS:-false},
-  "database": ${DATABASE:-0},
-  "ssl": {
-      "enabled": true
-  },  
+  "database": ${DATABASE:-0}, 
   "acl": [
     {
       "enabled": ["FCALL", "PING"]
