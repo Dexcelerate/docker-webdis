@@ -33,7 +33,7 @@ cat - <<EOF
 {
   "redis_host": "${REDIS_HOST:-redis}",
   "redis_port": ${REDIS_PORT:-6379},
-  "redis_auth": ${REDIS_AUTH:-null},
+  "redis_auth": "${REDIS_AUTH:-null}",
   "http_host": "${HTTP_HOST:-0.0.0.0}",
   "http_port": ${HTTP_PORT:-7379},
   "threads": ${THREADS:-5},
@@ -49,7 +49,7 @@ cat - <<EOF
 	},  
   "acl": [
     {
-      "enabled": ["FCALL"]
+      "enabled": ["FCALL", "PING"]
     }
   ],
   "verbosity": ${VERBOSITY:-8},
