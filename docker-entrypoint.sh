@@ -33,17 +33,23 @@ cat - <<EOF
 {
   "redis_host": "${REDIS_HOST:-redis}",
   "redis_port": ${REDIS_PORT:-6379},
-  "redis_auth": "${REDIS_AUTH:-null}",
+  "redis_auth": ${REDIS_AUTH:-null},
   "http_host": "${HTTP_HOST:-0.0.0.0}",
   "http_port": ${HTTP_PORT:-7379},
   "threads": ${THREADS:-5},
   "pool_size": ${POOL_SIZE:-10},
   "daemonize": false,
   "websockets": ${WEBSOCKETS:-false},
-  "database": ${DATABASE:-0}, 
+  "database": ${DATABASE:-0},
+	"ssl": {
+	    "enabled": true,
+	    "ca_cert_bundle": "/etc/letsencrypt/archive/dexcelerate.com/fullchain1.pem",
+	    "client_cert": "/etc/letsencrypt/archive/dexcelerate.com/cert1.pem",
+	    "client_key": "/etc/letsencrypt/archive/dexcelerate.com/privkey1.pem"
+	},  
   "acl": [
     {
-      "enabled": ["FCALL", "PING"]
+      "enabled": ["FCALL"]
     }
   ],
   "verbosity": ${VERBOSITY:-8},
