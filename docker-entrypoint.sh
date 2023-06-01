@@ -42,7 +42,7 @@ cat - <<EOF
   "websockets": ${WEBSOCKETS:-false},
   "database": ${DATABASE:-0},
   "ssl": {
-      "enabled": true,
+      "enabled": true
   },  
   "acl": [
     {
