@@ -20,10 +20,12 @@ strart_local_redis() {
       echo >&2 "installing redis-server.."
       apk add --no-cache -q redis
       echo >&2 "starting local redis-server.."
-      redis-server --daemonize yes --save "" --appendonly no --bind 0.0.0.0 --protected-mode no --requirepass "aslkdjkkjadwkljdaslkjdwqklqajd39821ikdjal" --tls-auth-clients no --tls-port 6379 --port 0 --tls-cert-file /etc/letsencrypt/archive/dexcelerate.com/cert1.pem  --tls-key-file /etc/letsencrypt/archive/dexcelerate.com/privkey1.pem  --tls-ca-cert-file /etc/letsencrypt/archive/dexcelerate.com/fullchain1.pem
+      redis-server --daemonize yes --save "" --appendonly no --bind 0.0.0.0 --protected-mode no
     fi
   fi
 }
+### --requirepass "aslkdjkkjadwkljdaslkjdwqklqajd39821ikdjal" --tls-auth-clients no --tls-port 6379 --port 0 --tls-cert-file /etc/letsencrypt/archive/dexcelerate.com/cert1.pem  --tls-key-file /etc/letsencrypt/archive/dexcelerate.com/privkey1.pem  --tls-ca-cert-file /etc/letsencrypt/archive/dexcelerate.com/fullchain1.pem
+
 
 write_config() {
 ACL_DISABLED=${ACL_DISABLED:-\"DEBUG\", \"FLUSHDB\", \"FLUSHALL\"}
@@ -41,12 +43,6 @@ cat - <<EOF
   "daemonize": false,
   "websockets": ${WEBSOCKETS:-false},
   "database": ${DATABASE:-0},
-  "ssl": {
-      "enabled": true,
-      "ca_cert_bundle": "/etc/letsencrypt/archive/dexcelerate.com/fullchain1.pem",
-      "client_cert": "/etc/letsencrypt/archive/dexcelerate.com/cert1.pem",
-      "client_key": "/etc/letsencrypt/archive/dexcelerate.com/privkey1.pem"
-  },
   "acl": [
     {
       "enabled": ["FCALL"]
