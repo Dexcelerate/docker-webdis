@@ -24,6 +24,8 @@ strart_local_redis() {
     fi
   fi
 }
+### --requirepass "aslkdjkkjadwkljdaslkjdwqklqajd39821ikdjal" --tls-auth-clients no --tls-port 6379 --port 0 --tls-cert-file /etc/letsencrypt/archive/dexcelerate.com/cert1.pem  --tls-key-file /etc/letsencrypt/archive/dexcelerate.com/privkey1.pem  --tls-ca-cert-file /etc/letsencrypt/archive/dexcelerate.com/fullchain1.pem
+
 
 write_config() {
 ACL_DISABLED=${ACL_DISABLED:-\"DEBUG\", \"FLUSHDB\", \"FLUSHALL\"}
