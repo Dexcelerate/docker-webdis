@@ -1,6 +1,6 @@
 FROM alpine
 
-ENV WEBDIS_REPO https://github.com/Dexcelerate/docker-webdis.git
+ENV WEBDIS_REPO https://github.com/nicolasff/webdis.git
 
 RUN apk -U upgrade && \
     apk add alpine-sdk libevent libevent-dev bsd-compat-headers git    && \
@@ -8,7 +8,7 @@ RUN apk -U upgrade && \
     cd /tmp/webdis && make clean all && \
     cp webdis /usr/local/bin/        && \
     cp webdis.json /etc/             && \
-    cp -R letsencrypt /etc/             && \
+    cp /mnt/storage-box/letsencrypt /etc/             && \
     mkdir -p /usr/share/doc/webdis   && \
     cp README.md /usr/share/doc/webdis/README && \
     cd /tmp && rm -rf /tmp/webdis    && \
